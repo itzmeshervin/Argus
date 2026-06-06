@@ -133,7 +133,7 @@ Argus/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/argus.git
+git clone https://github.com/itzmeshervin/argus.git
 cd argus
 ```
 
